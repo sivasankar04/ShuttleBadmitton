@@ -1,33 +1,25 @@
-const express = require('express');
-const UserDetailModal = require('../Database/userDetails');
-const userModal = require('../Database/userSchema')
-const router = express.Router();
+const { Router } = require('express')
+const asyncHandler = require('express-async-handler')
+const { getUserDetails } = require('../handlers/userHandler')
+const router = Router()
+const isInRole = ['Player', 'SuperUser', 'Spectator']
 
-const userRouter = () => {
-    router.post('/register', async (req, res) => {
-        const users = await userModal.create(req.body)
-        res.send({ data: users })
-    })
+const userMiddleware = (req, res, next) => {
+    const { role } = req.body
 
-    router.post('/addDetails', async (req, res) => {
-        try {
-            const userDetail = await UserDetailModal.create(req.body)
-            const users = await userModal.findByIdAndUpdate({ _id: req.body.userId }, { details: userDetail._id })
-            res.send({ data: users })
+    if (isInRole.includes(role)) {
+        return;
+    }
 
-        } catch (err) {
-        }
-    })
-    router.get('/getUsers', async (req, res) => {
-        try {
-            const users = await userModal.find().populate('details');
-            res.send({ data: users })
-        } catch (err) {
-        }
-    })
+    next()
+}
+
+const userRoute = () => {
+    router.post('/register', userMiddleware, asyncHandler(getUserDetails))
+    router.post('/addDetails', userMiddleware, asyncHandler(getUserDetails))
+    router.get('/getUsers', userMiddleware, asyncHandler(getUserDetails))
 
     return router
 }
 
-
-module.exports = userRouter;
+module.exports = userRoute;
