@@ -1,4 +1,4 @@
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
 const onFinish = (values) => {
     console.log('Success:', values);
 };
