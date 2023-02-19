@@ -1,0 +1,12 @@
+.topBarStyles {
+    width: 100%;
+    background-color: beige;
+    height: 12vh;
+
+    .topBarMenu {
+        cursor: pointer;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+    }
+}

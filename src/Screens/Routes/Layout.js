@@ -1,18 +1,9 @@
+import { Navigate } from 'react-router-dom';
 
-import { Outlet } from "react-router-dom"
-import PointsTable from 'Screens/Pointstable.jsx';
 
-const Layout = () => {
-    return (
-        <main className="App">
-            <h1 className="text-3xl text-red-500 font-bold ">
-                Hello world!
-            </h1>
-            {/* <PointsTable/> */}
-         
-            <Outlet />
-        </main>
-    )
+export default function PrivateRoute({ component: Component, ...props }) {
+    const userLogged = JSON.parse(localStorage.getItem('userLogedIn'));
+    console.log('userLogged', userLogged);
+
+    return /* userLogged ? */ <Component {...props} /> /* : <Navigate to={'/login'} /> */;
 }
-
-export default Layout
