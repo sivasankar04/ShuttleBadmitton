@@ -9,6 +9,14 @@ const routeSources = [
         path: '/pointsTable',
         component: lazy(() => import('./Pointstable/index.jsx'))
     },
+    {
+        path: '/teams',
+        component: lazy(() => import('./TeamList'))
+    },
+    {
+        path: '/teams/:id',
+        component: lazy(() => import('./TeamList/IndividualTeam'))
+    },
    
 ];
 const DisplayHomeContent = () => {

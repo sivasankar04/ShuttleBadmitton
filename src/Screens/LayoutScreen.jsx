@@ -10,11 +10,11 @@ const MainScreen = () => {
         <TopBarContent />
       </div>
       <div style={{ height: 'calc(100vh-120px)' }}>
-        <div className='flex'>
+        <div className='flex justify-center'>
           <div className='sideBarDesigns'>
             <SideBarContent />
           </div>
-          <div className='homeContentDesigns'>
+          <div className='mt-3 overflow-auto'>
             <DisplayHomeContent />
           </div>
         </div>
