@@ -1,0 +1,21 @@
+.tournamentListContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    button {
+        background-color: orange;
+        opacity: 0.7;
+        align-self:  flex-end;
+    }
+
+    .action-list {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        span {
+            cursor: pointer;
+        }
+    }
+}

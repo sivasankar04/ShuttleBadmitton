@@ -1,5 +1,6 @@
 import React, { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom';
+
 const routeSources = [
     {
         path: '/',
@@ -17,8 +18,13 @@ const routeSources = [
         path: '/teams/:id',
         component: lazy(() => import('./TeamList/IndividualTeam'))
     },
+    {
+        path: '/tournaments',
+        component: lazy(() => import('./tournaments/list/List'))
+    },
    
 ];
+
 const DisplayHomeContent = () => {
     return (
         <div>
@@ -31,4 +37,5 @@ const DisplayHomeContent = () => {
         </div>
     )
 }
+
 export default DisplayHomeContent

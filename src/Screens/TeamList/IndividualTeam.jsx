@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Avatar, Card } from 'antd';
+import { Card } from 'antd';
 
 let teamList = [
     {

@@ -1,5 +1,5 @@
 import './App.css';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from 'Screens/Routes/Layout';
 import {Suspense,lazy} from 'react'
 function App() {

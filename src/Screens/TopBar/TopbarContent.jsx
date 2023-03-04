@@ -8,9 +8,10 @@ const TopBarContent = () => {
     const navigate = useNavigate();
     const { setOpenDrawer, openDrawer } = useAuth();
 
-    const topRouter = [
+    const menuLinks = [
         { label: 'Teams', path: '/teams' },
-        { label: 'Points Table', path: '/pointsTable' }
+        { label: 'Points Table', path: '/pointsTable' },
+        { label: 'Tournaments', path: '/tournaments' },
     ]
     return (
         <div className='topBarStyles' >
@@ -18,8 +19,8 @@ const TopBarContent = () => {
             <HomeOutlined className='hidden md:block px-4 text-2xl ' onClick={() => navigate('/')} />
             <div className='md:flex justify-between w-full hidden '>
                 <div className='topBarMenu'>
-                    {topRouter.map((val, index) => {
-                        return <div className='tagStyles' onClick={() => { navigate(val.path) }}>
+                    {menuLinks.map((val, index) => {
+                        return <div key={`${val}_${index}`} className='tagStyles' onClick={() => { navigate(val.path) }}>
                             {val.label}
                         </div>
                     })}

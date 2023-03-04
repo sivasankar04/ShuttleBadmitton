@@ -1,18 +1,20 @@
 import React from 'react'
 import { Table, Tag } from 'antd';
+import { Link } from 'react-router-dom';
+
 const columns = [
     {
         title: '#',
         dataIndex: 'position',
         key: 'position',
-        render: (text, record, index) => <a>{index + 1}</a>,
+        render: (text, record, index) => <Link>{index + 1}</Link>,
     },
     {
         title: 'Teams',
         dataIndex: 'name',
         key: 'name',
         width: 350,
-        render: (text) => <a>{text}</a>,
+        render: (text) => <Link>{text}</Link>,
     },
     {
         title: 'Matches',
@@ -50,7 +52,6 @@ const columns = [
         render: (_, { tags }) => {
 
             return tags.map((tag) => {
-                console.log('tesytttttttttttt', tag.charAt(0).toUpperCase())
                 let color = tag === "lose" ? '#cd201f' : '#01a54b';
                 return (
                     <Tag color={color} key={tag}>
@@ -63,6 +64,7 @@ const columns = [
     },
 
 ];
+
 const data = [
     {
         position: 1,
@@ -91,6 +93,7 @@ const data = [
         tags: ['win', 'lose', 'lose'],
     },
 ];
+
 export default function PointsTable() {
     return (
         <div >

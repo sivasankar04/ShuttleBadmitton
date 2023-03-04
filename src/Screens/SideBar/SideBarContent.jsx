@@ -6,20 +6,20 @@ import { Drawer } from 'antd';
 import useAuth from 'hooks/useAuth';
 const SideBarContent = () => {
     const navigate = useNavigate()
+    const { openDrawer, setOpenDrawer } = useAuth();
     const menuItems = [
         { label: 'Home', icon: <HomeOutlined />, path: '/' },
         { label: 'Teams', icon: <UsergroupDeleteOutlined />, path: '/teams' },
         { label: 'Points Table', icon: <BarChartOutlined />, path: '/pointsTable' }
 
     ];
-    const { openDrawer, setOpenDrawer } = useAuth();
-    console.log('openDraweropenDrawer', openDrawer)
+
     return (
         <div>
             <div className='sideBarStyles hidden'>
                 {
                     menuItems.map((val, index) => {
-                        return <div className='sidebarMenu d-flex' onClick={() => { navigate(val.path) }}>
+                        return <div  key={`${val}_${index}`} className='sidebarMenu d-flex' onClick={() => { navigate(val.path) }}>
                             <div className='d-flex'>
                                 {val.icon}
                             </div>
@@ -43,7 +43,7 @@ const SideBarContent = () => {
                 <div className='sideBarStyles'>
                     {
                         menuItems.map((val, index) => {
-                            return <div className='sidebarMenu d-flex items-center' onClick={() => {
+                            return <div key={`${val}_${index}`} className='sidebarMenu d-flex items-center' onClick={() => {
                                 navigate(val.path); setOpenDrawer(false)
                             }}>
                                 {val.icon}

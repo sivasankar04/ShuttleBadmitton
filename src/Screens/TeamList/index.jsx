@@ -1,4 +1,4 @@
-import { BarChartOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { BarChartOutlined } from '@ant-design/icons';
 import { Avatar, Card } from 'antd';
 import CustomIcons from 'Components/CustomIcons';
 import { useNavigate } from 'react-router-dom';
