@@ -1,5 +1,5 @@
 name: Sample App
-
+run-name: ${{ github.actor }} is doing GitHub Actions
 on:
   push:
     branches: [ "main" ]
