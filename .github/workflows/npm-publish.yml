@@ -1,5 +1,4 @@
-name: Sample Site
-run-name: ${{ github.actor }} is doing GitHub Actions
+name: Sample App
 
 on:
   push:
@@ -30,35 +29,4 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-        folder: build # The folder the action should deploy.
-# name: learn-github-actions
-# run-name: ${{ github.actor }} is learning GitHub Actions
-# on:
-#   push:
-#     branches: [ main ]
-#   pull_request:
-#     branches: [ main ]
-
-# jobs:
-#   build:
-
-#     runs-on: ubuntu-latest
-
-#     strategy:
-#       matrix:
-#         node-version: [14.x, 16.x, 18.x, 20.x]
-
-#     steps:
-#       - uses: actions/checkout@v3
-#       - name: Use Node.js ${{ matrix.node-version }}
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#       - run: npm ci
-#       - run: npm run build --if-present
-#       - run: npm test
-#   deployment:
-#     runs-on: ubuntu-latest
-#     environment: production
-#     steps:
-#       - name: deploy
+          folder: build # The folder the action should deploy.
