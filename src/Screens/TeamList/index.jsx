@@ -39,6 +39,14 @@ export default function TeamList() {
       id: 3
 
     },
+    {
+      teamName: 'JKL5',
+      teamLogo: 'https://joesch.moe/api/v1/random',
+      teamslogon: 'Fight for win',
+      teamColor: 'yellow',
+      id: 3
+
+    },
   ]
   const teamClicked = (id) => {
     navigate(`/teams/${id}`)
