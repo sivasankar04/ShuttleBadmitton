@@ -10,7 +10,7 @@ const TopBarContent = () => {
 
     const menuLinks = [
         { label: 'Teams', path: '/teams' },
-        { label: 'Points Table', path: '/pointsTable' },
+        { label: 'Points Table', path: '/pointsTable5' },
         { label: 'Tournaments', path: '/tournaments' },
     ]
     return (
