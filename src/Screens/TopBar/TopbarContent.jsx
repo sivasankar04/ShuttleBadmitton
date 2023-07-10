@@ -6,7 +6,7 @@ import { HomeOutlined } from '@ant-design/icons'
 
 const TopBarContent = () => {
     const navigate = useNavigate();
-    const { setOpenDrawer, openDrawer } = useAuth();
+    const { setOpenDrawer } = useAuth();
 
     const menuLinks = [
         { label: 'Teams', path: '/teams' },
